@@ -1,0 +1,70 @@
+:root{
+  --bg:#0b0f17;
+  --neon1:#06f0ff;
+  --neon2:#ff3ecb;
+  --accent:#ffd166;
+  --glass: rgba(255,255,255,0.02);
+  --card-w: 920px;
+  --card-h: 600px;
+  --soft: rgba(255,255,255,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background:linear-gradient(180deg,#04050a 0%, #071023 60%); font-family: 'Poppins', system-ui, -apple-system, sans-serif; color:white; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow:hidden}
+
+canvas#particles{position:fixed; inset:0; z-index:0; pointer-events:none}
+
+.scene{height:100vh; display:flex; align-items:center; justify-content:center; perspective:1200px; z-index:2; position:relative}
+.card{width:var(--card-w); height:var(--card-h); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:20px; box-shadow: 0 10px 40px rgba(2,6,23,0.8), inset 0 1px 0 rgba(255,255,255,0.02); display:flex; transform-style:preserve-3d; transition:transform 0.8s cubic-bezier(.2,.8,.2,1); position:relative; overflow:hidden }
+
+.page{width:100%; padding:48px; display:flex; align-items:center; justify-content:center; position:absolute; inset:0; backface-visibility:hidden; transform-style:preserve-3d}
+.hidden{display:none}
+
+.content{width:100%; text-align:center; transform:translateZ(40px);}
+
+.title{font-family:'Russo One', sans-serif; letter-spacing:1px; margin:0; padding:0; color:var(--neon1)}
+.large{font-size:64px}
+.subtitle{margin-top:12px; opacity:0.9; font-weight:300}
+
+.neon{
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.12),
+    0 0 18px rgba(6,240,255,0.08),
+    0 10px 40px rgba(6,240,255,0.03);
+  filter: drop-shadow(0 0 12px rgba(6,240,255,0.08));
+}
+
+/* additional neon gradients */
+.neon.bold{font-weight:800; font-size:28px; background:linear-gradient(90deg,var(--neon1),var(--neon2)); -webkit-background-clip:text; color:transparent; text-transform:uppercase}
+
+.controls{margin-top:36px; display:flex; gap:20px; align-items:center; justify-content:center; flex-wrap:wrap}
+
+.tap{padding:12px 22px; border-radius:999px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); cursor:pointer; color:#fff; font-weight:600; transform:translateZ(60px); box-shadow:0 8px 30px rgba(6,240,255,0.04)}
+
+.timerWrap{display:flex; flex-direction:column; align-items:center}
+.timer{font-size:44px; width:110px; height:110px; display:flex; align-items:center; justify-content:center; border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); font-weight:800; box-shadow: 0 8px 30px rgba(0,0,0,0.6); transition:transform 0.25s}
+.label{font-size:12px; opacity:0.7}
+
+.btn{padding:12px 18px; border-radius:12px; border:0; cursor:pointer; font-weight:700; background:transparent; color:inherit}
+.neonBtn{background:linear-gradient(90deg,var(--neon1), var(--neon2)); color:#04060b; padding:12px 26px; border-radius:18px; box-shadow:0 6px 30px rgba(255,62,203,0.08), 0 2px 6px rgba(6,240,255,0.06); transform:translateZ(40px)}
+.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 14px}
+
+.iconBtn{background:rgba(255,255,255,0.02); border-radius:10px; padding:8px}
+
+.randomWrap{height:130px; display:flex; align-items:center; justify-content:center}
+.random{font-size:22px}
+.nameForm{margin-top:10px; display:flex; gap:12px; justify-content:center; align-items:center}
+.input{padding:12px 14px; border-radius:12px; width:320px; border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02); color:white; outline:none}
+.neonInput:focus{box-shadow:0 0 24px rgba(6,240,255,0.07); border-color:rgba(6,240,255,0.2)}
+
+.personal{margin-top:20px}
+.bigName{font-size:44px; font-weight:800; background:linear-gradient(90deg,var(--neon2),var(--neon1)); -webkit-background-clip:text; color:transparent; text-transform:uppercase; padding:8px}
+.personalText{opacity:0.9}
+
+@media (max-width:960px){
+  .card{width:92%; height:78vh}
+  .large{font-size:44px}
+  .timer{width:86px; height:86px; font-size:32px}
+}
+
+.sr-only{position:absolute; left:-9999px}

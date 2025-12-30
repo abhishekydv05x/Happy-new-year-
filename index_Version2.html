@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy New Year — 3D Neon</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <main class="scene">
+    <div class="card" id="card">
+      <!-- Page 1 -->
+      <section class="page page-one" id="page1">
+        <div class="content">
+          <h1 class="title neon large">✨️ Happy New Year ✨️</h1>
+          <p class="subtitle neon soft">Wishing you a bright & peaceful year ahead</p>
+
+          <div class="controls">
+            <div id="tapOverlay" class="tap">Tap to start ✨️</div>
+
+            <div class="timerWrap">
+              <div class="timer neon" id="timer">15</div>
+              <div class="label">seconds</div>
+            </div>
+
+            <button id="toPage2" class="btn neonBtn" disabled>
+              Go to Wishes
+            </button>
+            <div class="muteWrap">
+              <button id="muteBtn" class="iconBtn">🔈</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page 2 -->
+      <section class="page page-two hidden" id="page2">
+        <div class="content">
+          <h2 class="title neon">Happy New Year</h2>
+
+          <div class="randomWrap">
+            <div id="randomMsg" class="random neon bold">Wishing you joy!</div>
+          </div>
+
+          <form id="nameForm" class="nameForm">
+            <label for="nameInput" class="sr-only">Your name</label>
+            <input id="nameInput" class="input neonInput" placeholder="Enter your name..." />
+            <button type="submit" class="btn neonBtn">Show my wish ✨️</button>
+          </form>
+
+          <div id="personalWish" class="personal neon hidden">
+            <div class="bigName" id="bigName"></div>
+            <div class="personalText">Wishing you an amazing year ahead!</div>
+          </div>
+
+          <div class="nav">
+            <button id="backBtn" class="btn ghost">Back</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
